@@ -112,7 +112,7 @@ function get_viewport_size(){
     var exp_intro = {
       type: 'html-keyboard-response',
       choices: ['space'],
-      stimulus: "<h1>Movie Watching Task</h1> <br> <br> <p>We are interested in how affective experience changes over time.</p><p> In this experiment, you will be watching video clips from the TV show <strong> <i>Sherlock</i></strong>.</p> <p> You will be instructed to rate <strong> how each video clip makes you feel</strong>. </p> <p> Press <strong> SPACE </strong> when you are ready to begin.</p> ",
+      stimulus: "<h1>Story Listening Task</h1> <br> <br> <p>We are interested in how affective experience changes over time.</p><p> In this experiment, you will be watching video clips from the TV show <strong> <i>Sherlock</i></strong>.</p> <p> You will be instructed to rate <strong> how each video clip makes you feel</strong>. </p> <p> Press <strong> SPACE </strong> when you are ready to begin.</p> ",
       data: {
         subj_id: subj_name,
         test_part: 'instruct_prompt',
@@ -124,7 +124,7 @@ function get_viewport_size(){
 
     var sliderinstruction = {
         type: "html-slider-response",
-        stimulus:'<h1>Movie Watching Task</h1> <br> <br> <p> While each video is playing, you will <strong>continuously</strong> rate how aroused or not aroused the video clip makes you feel.</p> <p>You can press <i><span style= "color:blue">left</span></i> or <i><span style= "color:blue">right</span></i> arrow keys to adjust the scale. </p> ',
+        stimulus:'<h1>Story Listening Task</h1> <br> <br> <p> While each video is playing, you will <strong>continuously</strong> rate how aroused or not aroused the video clip makes you feel.</p> <p>You can press <i><span style= "color:blue">left</span></i> or <i><span style= "color:blue">right</span></i> arrow keys to adjust the scale. </p> ',
         width: 600,
         height: 400,
         slider_width: SLIDE_WIDTH,
@@ -160,7 +160,7 @@ function get_viewport_size(){
 
     var shiftinstruction = {
         type: "html-slider-response",
-        stimulus:'<h1>Movie Watching Task</h1> <br> <br> <p> You can press <i><span style= "color:blue">SHIFT + left</span></i> and <i><span style= "color:blue">SHIFT + right</span></i> arrow keys to make a <i><span style= "color:red">big jump</span></i> on the scale. </p> <p> When you feel comfortable with adjusting the scale, click continue. </p>',
+        stimulus:'<h1>Story Listening Task</h1> <br> <br> <p> You can press <i><span style= "color:blue">SHIFT + left</span></i> and <i><span style= "color:blue">SHIFT + right</span></i> arrow keys to make a <i><span style= "color:red">big jump</span></i> on the scale. </p> <p> When you feel comfortable with adjusting the scale, click continue. </p>',
         width: 600,
         height: 400,
         slider_width: SLIDE_WIDTH,
@@ -196,7 +196,7 @@ function get_viewport_size(){
     var explanation_arousal = {
         type: 'html-button-response',
         choices: ['continue'],
-        stimulus: " <h1>Movie Watching Task</h1> <br> <br> <p>You will rate how <strong> aroused </strong> or <strong> not aroused </strong> the video makes you feel at each moment.</p> <p> <strong>AROUSED</strong> refers to when you are feeling: <strong>very mentally or physically alert, activated, and/or energized</strong>.</p> <p><strong>NOT AROUSED</strong> refers to when you are feeling: <strong> very mentally or physically slow, still, and/or de-energized</strong>.</p> <p>Please note that the middle of arousal indicates <strong>some arousal, NOT NEUTRAL</strong>.</p> <br>"
+        stimulus: " <h1>Story Listening Task</h1> <br> <br> <p>You will rate how <strong> surprised </strong> or <strong> not surprised </strong> the story makes you feel at each moment.</p> <p> <strong>SURPRISED</strong> refers to when you are feeling: <strong>very mentally or physically alert, activated, and/or energized</strong>.</p> <p><strong>NOT AROUSED</strong> refers to when you are feeling: <strong> very mentally or physically slow, still, and/or de-energized</strong>.</p> <p>Please note that the middle of arousal indicates <strong>some arousal, NOT NEUTRAL</strong>.</p> <br>"
     };
     
 
@@ -205,7 +205,7 @@ function get_viewport_size(){
     var emphasis_change = {
         type: 'html-button-response',
         choices: ['continue'],
-        stimulus: ' <h1>Movie Watching Task</h1> <br> <br> <p> We are very interested in <i><span style= "color:red"><strong>emotion changes</strong></span></i> when you watch the video. </p> <p> <strong><i><span style= "color:red">Every time</span></i> </strong> you find how you feel about the video emotionally changes <strong><i><span style= "color:red"> -- even just a little bit -- </span></i></strong> please change the slider bar to match. </p> <br></ul> '
+        stimulus: ' <h1>Story Listening Task</h1> <br> <br> <p> We are very interested in <i><span style= "color:red"><strong>emotion changes</strong></span></i> when you watch the video. </p> <p> <strong><i><span style= "color:red">Every time</span></i> </strong> you find how you feel about the video emotionally changes <strong><i><span style= "color:red"> -- even just a little bit -- </span></i></strong> please change the slider bar to match. </p> <br></ul> '
     };
 
 
@@ -222,7 +222,7 @@ function get_viewport_size(){
     var practiceins = {
         type: 'html-button-response',
         choices: ['continue'],
-        stimulus: '<p> Now we will do a practice with a short video clip.</i> </p> <p>Get ready!</p> <br>'
+        stimulus: '<p> Now we will do a practice with a short audio clip.</i> </p> <p>Get ready!</p> <br>'
     };
 
     //practice//
@@ -303,18 +303,6 @@ function get_viewport_size(){
         type: 'html-button-response',
         choices: ['continue'],
         stimulus: '<p> Now you will hear the <strong> last third </strong> of the <strong><i>audio </i></strong> story. </p> <p>When you are ready to begin, please click continue.</p><br>'
-    };
-
-    var FNL1 = {
-        type: 'html-button-response',
-        choices: ['continue'],
-        stimulus: '<p> Now you will watch the <strong> first 20 minutes </strong> of the <strong><i>Friday Night Lights</i></strong> episode. </p> <p>When you are ready to begin, please click continue.</p>  <br>'
-    };
-
-    var FNL2 = {
-        type: 'html-button-response',
-        choices: ['continue'],
-        stimulus: '<p> Now you will watch the <strong> last 20 minutes </strong> of the <strong><i>Friday Night Lights</i></strong> episode. </p> <p>When you are ready to begin, please click continue.</p>  <br>'
     };
 
     var takebreak = {
