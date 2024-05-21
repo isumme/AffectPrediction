@@ -7,14 +7,14 @@
     <script src="jspsych-6/plugins/jspsych-html-keyboard-response.js"></script>
     <script src="jspsych-6/plugins/jspsych-html-button-response.js"></script>
     <script src="jspsych-6/plugins/jspsych-image-keyboard-response.js"></script>
-    <script src="jspsych-6/plugins/jspsych-video-keyboard-response.js"></script>
+    <script src="jspsych-6/plugins/jspsych-audio-keyboard-response.js"></script>
     <script src="jspsych-6/plugins/jspsych-survey-html-form.js"></script>
     <script src="jspsych-6/plugins/jspsych-survey-multi-select.js"></script>
     <script src="jspsych-6/plugins/jspsych-fullscreen.js"></script>
     <script src="jspsych-6/plugins/ratings.js"></script>
-    <script src="jspsych-6/plugins/jspsych-video-slider-response.js"></script>
+    <script src="jspsych-6/plugins/jspsych-audio-slider-response.js"></script>
     <script src="jspsych-6/plugins/jspsych-html-slider-response.js"></script>
-    <script src="jspsych-6/plugins/videoSlider.js"></script>
+    <script src="jspsych-6/plugins/audioSlider.js"></script>
     <script src="jspsych-6/plugins/jspsych-preload.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link href="jspsych-6/css/jspsych.css" rel="stylesheet" type="text/css">
@@ -237,7 +237,7 @@ function get_viewport_size(){
     //}
 
     var practice = {
-        type: "video-slider-response",
+        type: "audio-slider-response",
         sources: [
         'story1_audio.wav'
         ],
@@ -255,18 +255,18 @@ function get_viewport_size(){
         step: 1,
         post_trial_gap: 200,
         on_load: function(){
-            sliderOnLoad('#jspsych-video-slider-response-response')
+            sliderOnLoad('#jspsych-audio-slider-response-response')
         },
         on_finish: function(data){
-            sliderOnFinish('#jspsych-video-slider-response-response');
+            sliderOnFinish('#jspsych-audio-slider-response-response');
             //data.ratings = ratings;
             data.sub_type = 'practice';
         },
         on_start: function(trial) {
-            $('#jspsych-video-slider-response-next').hide();
-            $('#jspsych-video-slider-response-next').css("visibility", "hidden");
+            $('#jspsych-audio-slider-response-next').hide();
+            $('#jspsych-audio-slider-response-next').css("visibility", "hidden");
 
-            const sliderId = '#jspsych-video-slider-response-response';
+            const sliderId = '#jspsych-audio-slider-response-response';
             sliderOnStart(sliderId);
         },
     };
@@ -317,7 +317,7 @@ function get_viewport_size(){
     // paranoia story pt 1 
 
     var playparanoia1 = {
-        type: "video-slider-response",
+        type: "audio-slider-response",
         sources: [
         'stimuli/story1_audio.wav'
         ],
@@ -335,18 +335,18 @@ function get_viewport_size(){
         step: 1,
         post_trial_gap: 200,
         on_load: function(){
-            sliderOnLoad('#jspsych-video-slider-response-response')
+            sliderOnLoad('#jspsych-audio-slider-response-response')
         },
         on_finish: function(data){
-            sliderOnFinish('#jspsych-video-slider-response-response');
+            sliderOnFinish('#jspsych-audio-slider-response-response');
             //data.ratings = ratings;
             data.sub_type = 'paranoia1';
         },
         on_start: function(trial) {
-            $('#jspsych-video-slider-response-next').hide();
-            $('#jspsych-video-slider-response-next').css("visibility", "hidden");
+            $('#jspsych-audio-slider-response-next').hide();
+            $('#jspsych-audio-slider-response-next').css("visibility", "hidden");
 
-            const sliderId = '#jspsych-video-slider-response-response';
+            const sliderId = '#jspsych-audio-slider-response-response';
             sliderOnStart(sliderId);
         },
     };
@@ -354,7 +354,7 @@ function get_viewport_size(){
         // paranoia story pt 2 
     
         var playparanoia2 = {
-        type: "video-slider-response",
+        type: "audio-slider-response",
         sources: [
         'stimuli/story2_audio.wav'
         ],
@@ -372,24 +372,24 @@ function get_viewport_size(){
         step: 1,
         post_trial_gap: 200,
         on_load: function(){
-            sliderOnLoad('#jspsych-video-slider-response-response')
+            sliderOnLoad('#jspsych-audio-slider-response-response')
         },
         on_finish: function(data){
-            sliderOnFinish('#jspsych-video-slider-response-response');
+            sliderOnFinish('#jspsych-audio-slider-response-response');
             data.ratings = ratings;
         },
         on_start: function(trial) {
-            $('#jspsych-video-slider-response-next').hide();
-            $('#jspsych-video-slider-response-next').css("visibility", "hidden");
+            $('#jspsych-audio-slider-response-next').hide();
+            $('#jspsych-audio-slider-response-next').css("visibility", "hidden");
 
-            const sliderId = '#jspsych-video-slider-response-response';
+            const sliderId = '#jspsych-audio-slider-response-response';
             sliderOnStart(sliderId);
         },
     };
 
 
     var playparanoia3 = {
-        type: "video-slider-response",
+        type: "audio-slider-response",
         sources: [
         'stimuli/story3_audio.wav'
         ],
@@ -407,17 +407,17 @@ function get_viewport_size(){
         step: 1,
         post_trial_gap: 200,
         on_load: function(){
-            sliderOnLoad('#jspsych-video-slider-response-response')
+            sliderOnLoad('#jspsych-audio-slider-response-response')
         },
         on_finish: function(data){
-            sliderOnFinish('#jspsych-video-slider-response-response');
+            sliderOnFinish('#jspsych-audio-slider-response-response');
             data.ratings = ratings;
         },
         on_start: function(trial) {
-            $('#jspsych-video-slider-response-next').hide();
-            $('#jspsych-video-slider-response-next').css("visibility", "hidden");
+            $('#jspsych-audio-slider-response-next').hide();
+            $('#jspsych-audio-slider-response-next').css("visibility", "hidden");
 
-            const sliderId = '#jspsych-video-slider-response-response';
+            const sliderId = '#jspsych-audio-slider-response-response';
             sliderOnStart(sliderId);
         },
     };
@@ -457,7 +457,7 @@ function get_viewport_size(){
             time_elapsed: jsPsych.totalTime(),
             expStartTime: jsPsych.startTime(),
             trial_index: last_trial.trial_index + 1,
-            trial_type: 'video-slider-response-response',
+            trial_type: 'audio-slider-response-response',
         }
     }
 
@@ -497,23 +497,23 @@ function get_viewport_size(){
             var d = new Date();
             const diff =  d.getTime() - start_time;
 
-            const video = document.getElementById('jspsych-video-slider-response-stimulus-video');
-            if (video == null){
-                video_time = 'NA'
+            const audio = document.getElementById('jspsych-audio-slider-response-stimulus-audio');
+            if (audio == null){
+                audio_time = 'NA'
             } else {
-                video_time =  video.currentTime;
+                audio_time =  audio.currentTime;
             }
 
 
             const test = {
                 response: $(this).val(),
                 rt: diff,
-                videotime: video_time,
+                audiotime: audio_time,
                 slider_start: SLIDE_START,
                 time_elapsed: jsPsych.totalTime(),
                 expStartTime: jsPsych.startTime(),
                 trial_index: last_trial.trial_index + 1,
-                trial_type: 'video-slider-response-response',
+                trial_type: 'audio-slider-response-response',
             }
         var dataaa = saveDataLine(test);
         var lineee = anotherline(dataaa);
@@ -535,7 +535,7 @@ function get_viewport_size(){
     // saving data
 
     function saveDataLine(data){
-        var data_to_save = [data.response, data.rt, data.videotime, data.trial_index];
+        var data_to_save = [data.response, data.rt, data.audiotime, data.trial_index];
         return data_to_save
     }
 
