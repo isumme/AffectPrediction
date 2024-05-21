@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MCN Lab Experiment</title>
+    <title>CAB Lab Experiment</title>
     <script src="jspsych-6/jspsych.js"></script>
     <script src="jspsych-6/plugins/jspsych-html-keyboard-response.js"></script>
     <script src="jspsych-6/plugins/jspsych-html-button-response.js"></script>
@@ -239,7 +239,7 @@ function get_viewport_size(){
     var practice = {
         type: "video-slider-response",
         sources: [
-        'stimuli/arousal_practice1.mp4'
+        'story1_audio.wav'
         ],
         width: 900,
         height: 600,
@@ -287,16 +287,22 @@ function get_viewport_size(){
 
     // in-experiment instructions
 
-    var sherlock1 = {
+    var paranoia1 = {
         type: 'html-button-response',
         choices: ['continue'],
-        stimulus: '<p> Now you will watch the <strong> first 20 minutes </strong> of the <strong><i>Sherlock </i></strong> episode. </p> <p>When you are ready to begin, please click continue.</p> <br>'
+        stimulus: '<p> Now you will hear the <strong> first third </strong> of the <strong><i>audio </i></strong> story. </p> <p>When you are ready to begin, please click continue.</p> <br>'
     };
 
-    var sherlock2 = {
+    var paranoia2 = {
         type: 'html-button-response',
         choices: ['continue'],
-        stimulus: '<p> Now you will watch the <strong> last 20 minutes </strong> of the <strong><i>Sherlock </i></strong> episode. </p> <p>When you are ready to begin, please click continue.</p><br>'
+        stimulus: '<p> Now you will hear the <strong> second third </strong> of the <strong><i>audio </i></strong> story. </p> <p>When you are ready to begin, please click continue.</p><br>'
+    };
+
+    var paranoia3 = {
+        type: 'html-button-response',
+        choices: ['continue'],
+        stimulus: '<p> Now you will hear the <strong> last third </strong> of the <strong><i>audio </i></strong> story. </p> <p>When you are ready to begin, please click continue.</p><br>'
     };
 
     var FNL1 = {
@@ -308,7 +314,7 @@ function get_viewport_size(){
     var FNL2 = {
         type: 'html-button-response',
         choices: ['continue'],
-        stimulus: '<p> Now you will wwatch the <strong> last 20 minutes </strong> of the <strong><i>Friday Night Lights</i></strong> episode. </p> <p>When you are ready to begin, please click continue.</p>  <br>'
+        stimulus: '<p> Now you will watch the <strong> last 20 minutes </strong> of the <strong><i>Friday Night Lights</i></strong> episode. </p> <p>When you are ready to begin, please click continue.</p>  <br>'
     };
 
     var takebreak = {
@@ -320,12 +326,12 @@ function get_viewport_size(){
 
     // in-experiment video play
 
-    // sherlock first half 
+    // paranoia story pt 1 
 
-    var playsherlock1 = {
+    var playparanoia1 = {
         type: "video-slider-response",
         sources: [
-        'stimuli/Sherlock1.mp4'
+        'stimuli/story1_audio.wav'
         ],
         width: 900,
         height: 600,
@@ -346,7 +352,7 @@ function get_viewport_size(){
         on_finish: function(data){
             sliderOnFinish('#jspsych-video-slider-response-response');
             //data.ratings = ratings;
-            data.sub_type = 'sherlock1';
+            data.sub_type = 'paranoia1';
         },
         on_start: function(trial) {
             $('#jspsych-video-slider-response-next').hide();
@@ -357,12 +363,12 @@ function get_viewport_size(){
         },
     };
 
-        // sherlock second half 
+        // paranoia story pt 2 
     
-        var playsherlock2 = {
+        var playparanoia2 = {
         type: "video-slider-response",
         sources: [
-        'stimuli/Sherlock2.mp4'
+        'stimuli/story2_audio.wav'
         ],
         width: 900,
         height: 600,
@@ -394,6 +400,43 @@ function get_viewport_size(){
     };
 
 
+    var playparanoia3 = {
+        type: "video-slider-response",
+        sources: [
+        'stimuli/story3_audio.wav'
+        ],
+        width: 900,
+        height: 600,
+        slider_width: SLIDE_WIDTH,
+        slider_start: SLIDE_START,
+        button_label: '',
+        trial_duration: 1512840,
+        response_ends_trial: false,
+        trial_ends_after_video: true,
+        min: SLIDE_MIN,
+        max: SLIDE_MAX,
+        labels: SLIDE_LABELS,
+        step: 1,
+        post_trial_gap: 200,
+        on_load: function(){
+            sliderOnLoad('#jspsych-video-slider-response-response')
+        },
+        on_finish: function(data){
+            sliderOnFinish('#jspsych-video-slider-response-response');
+            data.ratings = ratings;
+        },
+        on_start: function(trial) {
+            $('#jspsych-video-slider-response-next').hide();
+            $('#jspsych-video-slider-response-next').css("visibility", "hidden");
+
+            const sliderId = '#jspsych-video-slider-response-response';
+            sliderOnStart(sliderId);
+        },
+    };
+
+
+
+        
     // loading the video //
 
     function sliderOnLoad(sliderId){
@@ -567,15 +610,20 @@ function get_viewport_size(){
 
       // run 1
 
-      timeline.push(sherlock1);
-      timeline.push(playsherlock1);
+      timeline.push(paranoia1);
+      timeline.push(playparanoia1);
       timeline.push(takebreak);
 
       // run 2
     
-      timeline.push(sherlock2);
-      timeline.push(playsherlock2);
+      timeline.push(paranoia2);
+      timeline.push(playparanoia2);
 
+      // run 3
+    
+      timeline.push(paranoia3);
+      timeline.push(playparanoia3);
+        
     }
 
 
