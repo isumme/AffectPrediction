@@ -91,7 +91,7 @@ function get_viewport_size(){
     const SLIDE_BIG_STEP = 5;
     const SLIDE_START = 13;
     const SLIDE_WIDTH = 650;
-    const SLIDE_LABELS  = ['<h4>Completely not aroused</h4>', '|','|', '|', '|','|','|','|','|','|','|','|','|','|','|','|','|','|','|','|','|','|','|','|','<h4>Completely aroused</h4>']
+    const SLIDE_LABELS  = ['<h4>Completely not surprised</h4>', '|','|', '|', '|','|','|','|','|','|','|','|','|','|','|','|','|','|','|','|','|','|','|','|','<h4>Completely surprised</h4>']
     
     
     // define instruction variables//
@@ -320,7 +320,7 @@ function get_viewport_size(){
     var takebreak = {
         type: 'html-button-response',
         choices: ['continue'],
-        stimulus: '<p> Great! You are done with the first half of the episode. Please feel free to take a break.  </p><p>Click continue when you are ready to continue with the experiment.</p> <br>'
+        stimulus: '<p> Great! You are done with that section of the story. Please feel free to take a break.  </p><p>Click continue when you are ready to continue with the experiment.</p> <br>'
     };
 
 
@@ -333,8 +333,8 @@ function get_viewport_size(){
         sources: [
         'stimuli/story1_audio.wav'
         ],
-        width: 900,
-        height: 600,
+        //width: 900,
+        //height: 600,
         slider_width: SLIDE_WIDTH,
         slider_start: SLIDE_START,
         button_label: '',
@@ -370,8 +370,8 @@ function get_viewport_size(){
         sources: [
         'stimuli/story2_audio.wav'
         ],
-        width: 900,
-        height: 600,
+        //width: 900,
+        //height: 600,
         slider_width: SLIDE_WIDTH,
         slider_start: SLIDE_START,
         button_label: '',
@@ -405,8 +405,8 @@ function get_viewport_size(){
         sources: [
         'stimuli/story3_audio.wav'
         ],
-        width: 900,
-        height: 600,
+        //width: 900,
+        //height: 600,
         slider_width: SLIDE_WIDTH,
         slider_start: SLIDE_START,
         button_label: '',
@@ -618,6 +618,7 @@ function get_viewport_size(){
     
       timeline.push(paranoia2);
       timeline.push(playparanoia2);
+      timeline.push(takebreak);
 
       // run 3
     
